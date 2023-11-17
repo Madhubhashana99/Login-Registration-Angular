@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class LoginService {
 
   private apiUrl1 = "http://localhost:8080/api/auth/authenticate";
+  private apiUrl2 = "";
+  private apiUrl3 = "";
 
   constructor(private http: HttpClient) { }
 
@@ -24,4 +26,39 @@ export class LoginService {
     };
     return this.http.post<{ token: string }>(`${this.apiUrl1}`, body);
   }
+
+  logout(){
+    localStorage.removeItem('token');
+  }
+
+  isLoggedIn(){
+    return localStorage.getItem('token') != null;
+  }
+
+  getUsername():Observable<string>{//getting the current logged user
+    const headers = this.getHeaders();
+    return this.http.get<string>('${this.apiUrl2}',{headers}); // using stored token
+  }
+
+  getUserProfile(): Observable<any>{
+    const headers = this.getHeaders();
+    return this.http.get<any>('${this.apiUrl3}',{headers});
+  }
+
+ /*
+ getUserProfile(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any>(`${this.apiUrl3}`, { headers });
+  }
+
+
+  getUserRole(): Observable<string> {
+    const token = localStorage.getItem('token') || ''; // Providing a default value of an empty string if token is null
+    const decodedToken: any = jwt_decode(token);
+    const role = decodedToken.role[0];
+    return of(role);
+  }
+ 
+ */
+
 }
