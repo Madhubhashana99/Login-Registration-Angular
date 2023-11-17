@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -45,20 +45,17 @@ export class LoginService {
     return this.http.get<any>('${this.apiUrl3}',{headers});
   }
 
- /*
- getUserProfile(): Observable<any> {
-    const headers = this.getHeaders();
-    return this.http.get<any>(`${this.apiUrl3}`, { headers });
-  }
-
-
-  getUserRole(): Observable<string> {
-    const token = localStorage.getItem('token') || ''; // Providing a default value of an empty string if token is null
+  getUserRole():Observable<String>{
+    const token = localStorage.getItem('token') || '';
     const decodedToken: any = jwt_decode(token);
     const role = decodedToken.role[0];
     return of(role);
   }
+
  
- */
 
 }
+function jwt_decode(token: string): any {
+  throw new Error('Function not implemented.');
+}
+
