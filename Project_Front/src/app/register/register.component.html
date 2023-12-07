@@ -23,21 +23,21 @@
 								</div>
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" value="" required autofocus>
+									<input id="email" [(ngModel)]="userDetails.email" type="email" class="form-control" value="" required autofocus>
 									
 								</div>
 
 								<div class="mb-3">
 								
                                     <label class="mb-2 text-muted" for="password">Passsword</label>
-									<input id="password" type="password" class="form-control" required>
+									<input id="password" [(ngModel)]="userDetails.password" type="password" class="form-control" required>
 								  
 								</div>
 
                                 <div class="mb-3">
 								
                                     <label class="mb-2 text-muted" for="password">Confirm Passsword</label>
-									<input id="password" type="password" class="form-control"  required>
+									<input id="pass" [(ngModel)]="userDetails.pass" type="password" class="form-control"  required>
 								  
 								</div>
 
