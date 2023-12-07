@@ -17,6 +17,6 @@ export class RegisterComponent {
         alert("Registered Successfully");
         console.log('Register successfull:',response);
       }
-    )
+    );
   }
 }
