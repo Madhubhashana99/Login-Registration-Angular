@@ -7,7 +7,13 @@ import { RegisterService } from './register.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  userDetails: any = {}
+  userDetails = {
+    name: '',
+    email: '',
+    password: '',
+    pass: '',
+    role:'',
+  };
 
   constructor(private registerService: RegisterService){}
 

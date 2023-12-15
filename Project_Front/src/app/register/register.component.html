@@ -18,26 +18,33 @@
 							<form (ngSubmit)="register()" method="POST" class="needs-validation" novalidate="" autocomplete="off">
                                 <div class="mb-3">
 									<label class="mb-2 text-muted" for="email">Full Name</label>
-									<input id="name" [(ngModel)]="userDetails.fullName" type="text" class="form-control" value="" required autofocus>
+									<input id="name" name="name" [(ngModel)]="userDetails.name" type="text" class="form-control" value="" required autofocus>
 									
 								</div>
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="email">E-Mail Address</label>
-									<input id="email" [(ngModel)]="userDetails.email" type="email" class="form-control" value="" required autofocus>
+									<input id="email" name="email" [(ngModel)]="userDetails.email" type="email" class="form-control" value="" required autofocus>
 									
 								</div>
 
 								<div class="mb-3">
 								
                                     <label class="mb-2 text-muted" for="password">Passsword</label>
-									<input id="password" [(ngModel)]="userDetails.password" type="password" class="form-control" required>
+									<input id="password" name="password" [(ngModel)]="userDetails.password" type="password" class="form-control" required>
 								  
 								</div>
 
                                 <div class="mb-3">
 								
                                     <label class="mb-2 text-muted" for="password">Confirm Passsword</label>
-									<input id="pass" [(ngModel)]="userDetails.pass" type="password" class="form-control"  required>
+									<input id="pass" name="pass" [(ngModel)]="userDetails.pass" type="password" class="form-control"  required>
+								  
+								</div>
+
+								<div class="mb-3">
+								
+                                    <label class="mb-2 text-muted" for="role">Role</label>
+									<input id="role" name="role" [(ngModel)]="userDetails.role" class="form-control"  required>
 								  
 								</div>
 
