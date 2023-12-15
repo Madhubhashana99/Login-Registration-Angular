@@ -46,18 +46,18 @@ export class RegisterComponent {
       email: '',
       password: '',
       pass: '',
-      role: ''
+      role: '',
     };
   }
 
   validateForm(): boolean {
     // Perform front-end validation
     if (
-      this.regData.firstname.trim() === '' ||
-      this.regData.lastname.trim() === '' ||
-      this.regData.email.trim() === '' ||
-      this.regData.password.trim() === '' ||
-      this.regData.role.trim() === ''
+      this.userDetails.name.trim() === '' ||
+      this.userDetails.email.trim() === '' ||
+      this.userDetails.password.trim() === '' ||
+      this.userDetails.pass.trim() === '' ||
+      this.userDetails.role.trim() === ''
     ) {
       // Show an error message or perform any other desired actions
       alert('All fields are required');
@@ -66,13 +66,13 @@ export class RegisterComponent {
     
 
 
-    if (!this.validateEmail(this.regData.email)) {
+    if (!this.validateEmail(this.userDetails.email)) {
       // Show an error message or perform any other desired actions
       alert('Invalid email');
       return false;
     }
 
-    if (!this.validatePassword(this.regData.password)) {
+    if (!this.validatePassword(this.userDetails.password)) {
       // Show an error message or perform any other desired actions
       alert('Invalid password. It should contain at least one lowercase letter, one uppercase letter, one special character, one number, and be at least 8 characters long.  Example - @Example8');
       return false;
